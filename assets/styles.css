@@ -91,20 +91,39 @@ body {
   color: #ffffff !important;
 }
 
-/* Force white text on all major elements */
-body, p, h1, h2, h3, h4, h5, h6, span, div, li, a {
+/* Force white text on ALL elements */
+*, *::before, *::after {
+  color: #ffffff !important;
+}
+
+body, p, h1, h2, h3, h4, h5, h6, span, div, li, a, label, small {
   color: #ffffff !important;
 }
 
 /* Ensure card text is white */
-.card, .card-body, .card-title {
+.card, .card-body, .card-title, .card-text {
+  color: #ffffff !important;
+}
+
+/* Stats text white */
+.stat, .stat-title, .stat-value, .stat-desc {
+  color: #ffffff !important;
+}
+
+/* Alert and badge text */
+.alert, .badge {
   color: #ffffff !important;
 }
 
 /* Section headings extra white */
-section h2, section h3 {
+section h2, section h3, section h4 {
   color: #ffffff !important;
   text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Specific sections */
+#about *, #projects *, #tech *, #resume *, #contact * {
+  color: #ffffff !important;
 }
 
 /* Black background with subtle purple/cyan glow */
