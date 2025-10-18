@@ -48,29 +48,6 @@
   --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* DaisyUI theme overrides for light mode */
-[data-theme='light'] {
-  --color-primary: var(--brand-purple);
-  --color-primary-content: #ffffff;
-  --color-secondary: var(--brand-cyan);
-  --color-secondary-content: var(--brand-black);
-  --color-base-100: #ffffff;
-  --color-base-200: #f7f7f7;
-  --color-base-300: #e5e5e5;
-  --color-base-content: #1f2937;
-}
-
-/* DaisyUI theme overrides for dark mode */
-[data-theme='dark'] {
-  --color-primary: var(--brand-purple);
-  --color-primary-content: #ffffff;
-  --color-secondary: var(--brand-cyan);
-  --color-secondary-content: var(--brand-black);
-  --color-base-100: var(--brand-black);
-  --color-base-200: #1a1a2e;
-  --color-base-300: #16213e;
-  --color-base-content: #e5e5e5;
-}
 
 /* Smooth scrolling */
 html {
@@ -179,12 +156,6 @@ body::before {
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
-[data-theme='light'] .glass-card {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
 /* Enhanced card hover effects */
 .card {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -256,24 +227,26 @@ body::before {
 /* Navbar glass effect */
 .navbar {
   backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.95) !important;
-  border-bottom: 1px solid rgba(106, 0, 255, 0.1);
+  background: rgba(11, 11, 15, 0.95) !important;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
   transition: all 0.3s ease;
 }
 
-[data-theme='dark'] .navbar {
-  background: rgba(11, 11, 15, 0.95) !important;
-  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
-}
-
-[data-theme='dark'] .navbar a[href="#"] {
+.navbar a[href="#"] {
   color: #00d4ff !important;
   text-shadow: 0 2px 4px rgba(0, 212, 255, 0.3);
 }
 
-/* Animated underline for nav links */
-.navbar a {
+/* Navbar links and buttons styling */
+.navbar a,
+.navbar button {
   position: relative;
+  color: #ffffff !important;
+}
+
+.navbar button svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
 }
 
 .navbar a::after {

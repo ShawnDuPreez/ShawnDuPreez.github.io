@@ -2,8 +2,6 @@
  * Main JavaScript for Shawn du Preez portfolio.
  *
  * Responsibilities:
- *  - Persist the selected theme across sessions using localStorage and toggle
- *    DaisyUI themes on user interaction.
  *  - Build the project cards and modals dynamically from a JSON array to
  *    simplify maintenance and avoid clutter in the HTML file.
  *  - Initialise AOS animations with sensible defaults.
@@ -13,103 +11,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ===== Theme list (single source of truth) =====
-  const AVAILABLE_THEMES = [
-    'winter','night','business','luxury','nord','cyberpunk','synthwave',
-    'aqua','dracula','abyss','silk','caramellatte'
-  ];
-
-  // Build theme tiles dynamically
-  const themeSelector = document.getElementById('theme-selector');
-  if (themeSelector) {
-    themeSelector.innerHTML = AVAILABLE_THEMES.map(name => `
-      <button class="theme-tile outline outline-2 outline-base-content/20 hover:outline-primary overflow-hidden rounded-xl text-left transition-all hover:scale-[1.02] hover:shadow-lg"
-              data-set-theme="${name}" data-act-class="[&_svg]:visible" aria-pressed="false">
-        <div data-theme="${name}" class="bg-base-100 text-base-content w-full cursor-pointer font-sans">
-          <div class="flex flex-col gap-3 p-4">
-            <div class="flex items-center justify-between gap-2">
-              <div class="text-base font-bold capitalize">${name}</div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                   viewBox="0 0 24 24" fill="currentColor" class="invisible h-5 w-5 shrink-0 text-success">
-                <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"></path>
-              </svg>
-            </div>
-            <div class="flex gap-2 h-10">
-              <div class="bg-primary flex-1 rounded-lg"></div>
-              <div class="bg-secondary flex-1 rounded-lg"></div>
-              <div class="bg-accent flex-1 rounded-lg"></div>
-              <div class="bg-neutral flex-1 rounded-lg"></div>
-            </div>
-          </div>
-        </div>
-      </button>
-    `).join('');
-  }
-
-  // Theme setter utility
-  function setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-    const buttons = document.querySelectorAll('[data-set-theme]');
-    buttons.forEach(b => {
-      const svg = b.querySelector('div svg');
-      if (svg) svg.classList.add('invisible');
-      b.setAttribute('aria-pressed', String(b.getAttribute('data-set-theme') === theme));
-    });
-    const selected = document.querySelector(`[data-set-theme="${theme}"] div svg`);
-    if (selected) selected.classList.remove('invisible');
-  }
-
-  // Floating theme widget controls
-  const themeBtn = document.getElementById('theme-btn');
-  const themeWidget = document.getElementById('theme-widget');
-  const closeWidgetBtn = document.getElementById('close-theme-widget');
-
-  if (themeBtn && themeWidget) {
-    // Open widget
-    themeBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      themeWidget.classList.toggle('hidden');
-    });
-
-    // Close widget button
-    if (closeWidgetBtn) {
-      closeWidgetBtn.addEventListener('click', () => {
-        themeWidget.classList.add('hidden');
-      });
-    }
-
-    // Close widget when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!themeWidget.contains(e.target) && e.target !== themeBtn) {
-        themeWidget.classList.add('hidden');
-      }
-    });
-
-    // Prevent clicks inside widget from closing it
-    themeWidget.addEventListener('click', (e) => {
-      e.stopPropagation();
-    });
-  }
-
-  // Bind theme selection clicks
-  const themeButtons = document.querySelectorAll('[data-set-theme]');
-  themeButtons.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const theme = btn.getAttribute('data-set-theme');
-      setTheme(theme);
-      // Close the widget after selection
-      if (themeWidget) {
-        themeWidget.classList.add('hidden');
-      }
-    });
-  });
-  
-  // Initial apply
-  setTheme(localStorage.getItem('theme') || 'winter');
-
   // Mobile menu toggle
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
