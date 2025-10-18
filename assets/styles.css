@@ -88,6 +88,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #000000 !important;
   position: relative;
+  color: #ffffff !important;
+}
+
+/* Force white text on all major elements */
+body, p, h1, h2, h3, h4, h5, h6, span, div, li, a {
+  color: #ffffff !important;
+}
+
+/* Ensure card text is white */
+.card, .card-body, .card-title {
+  color: #ffffff !important;
+}
+
+/* Section headings extra white */
+section h2, section h3 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 /* Black background with subtle purple/cyan glow */
