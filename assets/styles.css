@@ -258,6 +258,26 @@ body::before {
   transition: all 0.3s ease;
   font-weight: 600;
   letter-spacing: 0.5px;
+  padding: 1rem 2rem !important;
+  border-radius: 1rem !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3.5rem;
+}
+
+.btn-lg {
+  padding: 1.25rem 2.5rem !important;
+  border-radius: 1.25rem !important;
+  font-size: 1.1rem !important;
+  min-height: 4rem;
+}
+
+.btn-sm {
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 0.75rem !important;
+  min-height: 2.5rem;
 }
 
 .btn::before {
@@ -271,6 +291,12 @@ body::before {
   background: rgba(255, 255, 255, 0.25);
   transform: translate(-50%, -50%);
   transition: width 0.6s, height 0.6s;
+  z-index: 0;
+}
+
+.btn > * {
+  position: relative;
+  z-index: 1;
 }
 
 .btn:hover::before {
@@ -344,6 +370,9 @@ body::before {
   position: relative;
   color: #ffffff !important;
   font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0.75rem !important;
+  transition: all 0.3s ease;
 }
 
 .navbar button svg {
@@ -354,6 +383,11 @@ body::before {
 .navbar a:hover {
   color: #00d4ff !important;
   text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+  background: rgba(106, 0, 255, 0.1);
+}
+
+.navbar button:hover {
+  background: rgba(106, 0, 255, 0.1);
 }
 
 .navbar a::after {
@@ -561,12 +595,17 @@ section > * {
 
 /* Professional Button Styling - enhanced */
 .btn {
-  border-radius: var(--radius-md) !important;
+  border-radius: var(--radius-lg) !important;
   font-weight: 600 !important;
   letter-spacing: 0.5px !important;
   transition: all var(--transition-base) !important;
   box-shadow: var(--shadow-md) !important;
   text-transform: none !important;
+  padding: 1rem 2rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
 }
 
 .btn:hover {
@@ -590,6 +629,7 @@ section > * {
   left: -50%;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
   transform: rotateZ(60deg) translate(-5em, 7.5em);
+  z-index: 0;
 }
 
 .btn-primary:hover::after {
