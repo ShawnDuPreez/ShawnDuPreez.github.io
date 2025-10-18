@@ -19,10 +19,6 @@
 
     <title>Shawn du Preez Portfolio</title>
 
-    <!-- DaisyUI and Tailwind CSS via CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@^4"></script>
-
     <!-- Prevent theme FOUC: set theme ASAP from localStorage -->
     <script>
       (function() {
@@ -40,8 +36,8 @@
     <!-- Lucide icons (optional icons) -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="assets/styles.css" />
+    <!-- Vite will inject the CSS here -->
+    <link rel="stylesheet" href="/assets/main.css" />
   </head>
   <body class="scroll-smooth">
     <!-- Navbar -->
@@ -515,7 +511,7 @@
     </footer>
 
     <!-- Custom script -->
-    <script src="assets/script.js"></script>
+    <script type="module" src="/assets/script.js"></script>
     
     <!-- Particle background script -->
     <script>
