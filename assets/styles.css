@@ -48,6 +48,22 @@
   --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Force dark theme colors - override DaisyUI defaults */
+[data-theme='dark'] {
+  --color-primary: #6a00ff;
+  --color-primary-content: #ffffff;
+  --color-secondary: #00d4ff;
+  --color-secondary-content: #ffffff;
+  --color-accent: #f093fb;
+  --color-accent-content: #ffffff;
+  --color-base-100: #000000;
+  --color-base-200: #0a0a0a;
+  --color-base-300: #1a1a1a;
+  --color-base-content: #ffffff;
+  --color-neutral: #1a1a1a;
+  --color-neutral-content: #ffffff;
+}
+
 
 /* Smooth scrolling */
 html {
