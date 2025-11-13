@@ -166,6 +166,7 @@ body::before {
   background-size: 400% 400%;
   animation: gradientShift 25s ease infinite;
   overflow: hidden;
+  padding-top: 80px; /* Account for fixed navbar */
 }
 
 #hero::before {
