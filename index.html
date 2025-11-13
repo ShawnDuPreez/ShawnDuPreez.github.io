@@ -1,38 +1,581 @@
-<!doctype html>
-<html lang="en" data-theme="winter">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Shawn du Preez — Full-Stack Developer Portfolio</title>
-  <meta name="description" content="Full-stack web & mobile developer in Pretoria, South Africa. BSc CS & IT student building secure, scalable apps with ASP.NET, Azure, Kotlin, React Native." />
-  <meta property="og:title" content="Shawn du Preez Portfolio" />
-  <meta property="og:description" content="Full-stack & mobile dev focused on secure, data-driven systems." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/assets/img/hero.jpg" />
-  <link rel="icon" type="image/png" href="/assets/img/avatar.png" />
-  
-  <!-- FOUC Prevention -->
-  <script>
-    (function() {
-      try {
-        var t = localStorage.getItem('theme') || 'winter';
-        document.documentElement.setAttribute('data-theme', t);
-      } catch (e) {}
-    })();
-  </script>
-</head>
-<body class="min-h-screen">
-  <header id="nav"></header>
-  <main>
-    <section id="hero"></section>
-    <section id="about"></section>
-    <section id="projects"></section>
-    <section id="tech"></section>
-    <section id="resume"></section>
-    <section id="contact"></section>
-  </main>
-  <footer id="footer"></footer>
-  <script type="module" src="/src/main.js"></script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Shawn du Preez – Full‑stack & mobile dev focused on secure, data‑driven systems."
+    />
+    <meta property="og:title" content="Shawn du Preez Portfolio" />
+    <meta
+      property="og:description"
+      content="Full‑stack & mobile dev focused on secure, data‑driven systems."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/hero.jpg" />
+    <link rel="icon" type="image/png" href="assets/img/avatar.png" />
 
+    <title>Shawn du Preez Portfolio</title>
+
+    <!-- DaisyUI and Tailwind CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@^4"></script>
+
+
+    <!-- AOS animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- Lucide icons (optional icons) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body class="scroll-smooth">
+    <!-- Navbar -->
+    <header class="navbar fixed top-0 left-0 right-0 z-50 bg-base-100 shadow-lg">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="flex items-center">
+          <a href="#" class="text-xl font-bold">Shawn du Preez</a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <nav class="hidden md:flex space-x-4">
+            <a href="#about" class="btn btn-ghost btn-sm">About</a>
+            <a href="#projects" class="btn btn-ghost btn-sm">Projects</a>
+            <a href="#tech" class="btn btn-ghost btn-sm">Tech</a>
+            <a href="#resume" class="btn btn-ghost btn-sm">Resume</a>
+            <a href="#contact" class="btn btn-ghost btn-sm">Contact</a>
+          </nav>
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button id="menu-btn" class="btn btn-ghost" aria-label="Toggle menu">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-base-100">
+        <nav class="flex flex-col items-center py-2 space-y-2">
+          <a href="#about" class="btn btn-ghost btn-sm w-full">About</a>
+          <a href="#projects" class="btn btn-ghost btn-sm w-full">Projects</a>
+          <a href="#tech" class="btn btn-ghost btn-sm w-full">Tech</a>
+          <a href="#resume" class="btn btn-ghost btn-sm w-full">Resume</a>
+          <a href="#contact" class="btn btn-ghost btn-sm w-full">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="hero" class="hero min-h-screen relative overflow-hidden">
+      <div class="hero-content flex-col lg:flex-row-reverse relative z-10 max-w-6xl mx-auto px-4">
+        <div class="lg:w-1/3 flex justify-center items-center mb-8 lg:mb-0" data-aos="zoom-in">
+        <img
+          src="assets/img/avatar.png"
+            class="float-animation rounded-full"
+          alt="Avatar of Shawn"
+            style="width: 300px; height: 300px; object-fit: cover; object-position: center; border: 4px solid rgba(106, 0, 255, 0.6); box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.4), 0 0 40px rgba(106, 0, 255, 0.5), 0 20px 40px rgba(0, 0, 0, 0.6);"
+          />
+        </div>
+        <div class="lg:w-2/3 lg:pr-12">
+          <div class="mb-6" data-aos="fade-right">
+            <span class="inline-block px-6 py-2.5 rounded-full text-white text-sm font-semibold shadow-lg" style="background: linear-gradient(135deg, rgba(106, 0, 255, 0.3) 0%, rgba(0, 212, 255, 0.3) 100%); border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(20px);">
+              👋 Welcome to my portfolio
+            </span>
+          </div>
+          <h1
+            class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight"
+            data-aos="fade-up"
+            style="color: white; text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.5);"
+          >
+            BSc CS &amp; IT student<br>
+            <span class="block mt-3" style="background: linear-gradient(135deg, #00d4ff 0%, #6a00ff 50%, #f093fb 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 0 15px rgba(106, 0, 255, 0.4));">
+              building full‑stack apps
+            </span>
+          </h1>
+          <p
+            class="text-lg md:text-xl mb-10 leading-relaxed"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            style="color: rgba(255, 255, 255, 0.85); font-weight: 300; max-width: 600px;"
+          >
+            I ship secure, scalable features across <strong style="color: #00d4ff;">ASP.NET + Azure</strong> and
+            <strong style="color: #6a00ff;">Kotlin/React Native</strong>, with clean UIs and automation.
+          </p>
+          <div class="flex flex-wrap gap-4 justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="200">
+            <a href="#projects" class="btn btn-primary btn-lg pulse-animation">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+              <span>View Projects</span>
+            </a>
+            <a
+              href="assets/Resume.pdf"
+              class="btn btn-outline btn-lg"
+              download
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <span>Download Resume</span>
+            </a>
+          </div>
+          <div class="mt-10 stats stats-vertical lg:stats-horizontal shadow-2xl" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat place-items-center">
+              <div class="stat-value text-5xl">20+</div>
+              <div class="stat-title font-semibold">Projects</div>
+              <div class="stat-desc">Full-stack apps</div>
+            </div>
+            <div class="stat place-items-center">
+              <div class="stat-value text-5xl">15+</div>
+              <div class="stat-title font-semibold">Technologies</div>
+              <div class="stat-desc">Frameworks & tools</div>
+            </div>
+            <div class="stat place-items-center">
+              <div class="stat-value text-5xl">∞</div>
+              <div class="stat-title font-semibold">Passion</div>
+              <div class="stat-desc">Always learning</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Animated scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10" data-aos="fade-up" data-aos-delay="400">
+        <a href="#about" class="text-white opacity-70 hover:opacity-100 transition-opacity">
+          <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20 bg-base-100 relative">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <h2 class="text-5xl font-bold mb-12 text-center gradient-text" data-aos="fade-up">About Me</h2>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div data-aos="fade-right">
+            <div class="glass-card p-8 rounded-2xl">
+              <p class="text-lg leading-relaxed mb-6">
+                I'm a <strong class="text-primary">Computer Science &amp; IT student</strong> passionate about building
+                cloud‑integrated web apps with <strong>ASP.NET Razor Pages &amp; Azure</strong>, mobile
+                apps in <strong>Kotlin and React Native</strong>, and automation using Google
+                Forms/Sheets/Apps Script.
+              </p>
+              <p class="text-lg leading-relaxed">
+                I combine strong <span class="text-secondary">backend engineering</span> with
+                clean, usable interfaces to create products that users love.
+              </p>
+            </div>
+          </div>
+          <div data-aos="fade-left" data-aos-delay="100">
+            <div class="space-y-4">
+              <div class="flex items-center gap-4 p-4 glass-card rounded-xl hover:scale-105 transition-transform">
+                <div class="text-4xl">📍</div>
+                <div>
+                  <div class="font-semibold">Location</div>
+                  <div class="text-sm opacity-70">Pretoria, South Africa</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 p-4 glass-card rounded-xl hover:scale-105 transition-transform">
+                <div class="text-4xl">🔒</div>
+                <div>
+                  <div class="font-semibold">Security-minded</div>
+                  <div class="text-sm opacity-70">HTTPS, HSTS, JWT, role-based access</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 p-4 glass-card rounded-xl hover:scale-105 transition-transform">
+                <div class="text-4xl">🏗️</div>
+                <div>
+                  <div class="font-semibold">Clean Architecture</div>
+                  <div class="text-sm opacity-70">Scalable, maintainable code</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 p-4 glass-card rounded-xl hover:scale-105 transition-transform">
+                <div class="text-4xl">☁️</div>
+                <div>
+                  <div class="font-semibold">Cloud Native</div>
+                  <div class="text-sm opacity-70">Azure & Supabase expert</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-20 bg-base-200 relative overflow-hidden">
+      <div class="container mx-auto px-4 max-w-7xl">
+        <div class="text-center mb-16">
+          <h2 class="text-5xl font-bold mb-4 gradient-text" data-aos="fade-up">Featured Projects</h2>
+          <p class="text-lg opacity-70 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+            Explore my latest work showcasing full-stack development, cloud integration, and mobile solutions
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-3 mb-10" id="projects-filters" data-aos="fade-up" data-aos-delay="150">
+          <button class="btn btn-sm btn-outline" data-filter="All">All</button>
+          <button class="btn btn-sm btn-outline" data-filter="Web">Web</button>
+          <button class="btn btn-sm btn-outline" data-filter="Mobile">Mobile</button>
+          <button class="btn btn-sm btn-outline" data-filter="Automation">Automation</button>
+          <button class="btn btn-sm btn-outline" data-filter="Research">Research</button>
+          <button class="btn btn-sm btn-outline" data-filter="DevOps">DevOps</button>
+          <button class="btn btn-sm btn-outline" data-filter="Design">Design</button>
+          <button class="btn btn-sm btn-outline" data-filter="Prototypes">Prototypes</button>
+        </div>
+        <div
+          id="projects-grid"
+          class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        ></div>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="tech" class="py-20 bg-base-100 relative">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="text-center mb-16">
+          <h2 class="text-5xl font-bold mb-4 gradient-text" data-aos="fade-up">Tech Stack</h2>
+          <p class="text-lg opacity-70" data-aos="fade-up" data-aos-delay="100">
+            Technologies and tools I use to bring ideas to life
+          </p>
+        </div>
+        <div class="space-y-8">
+          <div class="glass-card p-6 rounded-2xl" data-aos="fade-up">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="text-3xl">💻</div>
+              <h3 class="text-2xl font-semibold">Languages</h3>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <span class="badge badge-lg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.9rem;">C#</span>
+              <span class="badge badge-lg" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Kotlin</span>
+              <span class="badge badge-lg" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Java</span>
+              <span class="badge badge-lg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.9rem;">JavaScript</span>
+              <span class="badge badge-lg" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.9rem;">TypeScript</span>
+              <span class="badge badge-lg" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.9rem;">SQL</span>
+              <span class="badge badge-lg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.9rem;">HTML/CSS</span>
+              <span class="badge badge-lg" style="background: linear-gradient(135deg, #c471ed 0%, #f64f59 100%); color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Markdown</span>
+            </div>
+          </div>
+          <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="text-3xl">🎨</div>
+              <h3 class="text-2xl font-semibold">Frameworks</h3>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <span class="badge badge-lg badge-outline" style="border-color: #6a00ff; color: #6a00ff; padding: 0.75rem 1.25rem; font-size: 0.9rem;">ASP.NET Core</span>
+              <span class="badge badge-lg badge-outline" style="border-color: #6a00ff; color: #6a00ff; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Razor Pages</span>
+              <span class="badge badge-lg badge-outline" style="border-color: #6a00ff; color: #6a00ff; padding: 0.75rem 1.25rem; font-size: 0.9rem;">MVC</span>
+              <span class="badge badge-lg badge-outline" style="border-color: #6a00ff; color: #6a00ff; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Identity</span>
+              <span class="badge badge-lg badge-outline" style="border-color: #6a00ff; color: #6a00ff; padding: 0.75rem 1.25rem; font-size: 0.9rem;">React Native (Expo)</span>
+              <span class="badge badge-lg badge-outline" style="border-color: #6a00ff; color: #6a00ff; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Jetpack Compose</span>
+              <span class="badge badge-lg badge-outline" style="border-color: #6a00ff; color: #6a00ff; padding: 0.75rem 1.25rem; font-size: 0.9rem;">RoomDB</span>
+              <span class="badge badge-lg badge-outline" style="border-color: #6a00ff; color: #6a00ff; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Apps Script</span>
+            </div>
+          </div>
+          <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="text-3xl">☁️</div>
+              <h3 class="text-2xl font-semibold">Cloud &amp; Database</h3>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <span class="badge badge-lg" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Azure Blob/Table/Queue/File</span>
+              <span class="badge badge-lg" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Entra ID</span>
+              <span class="badge badge-lg" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Azure SQL</span>
+              <span class="badge badge-lg" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Azure</span>
+              <span class="badge badge-lg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Supabase Auth</span>
+              <span class="badge badge-lg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Supabase Postgres</span>
+              <span class="badge badge-lg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Supabase Storage</span>
+              <span class="badge badge-lg" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Google Sheets/Forms</span>
+              <span class="badge badge-lg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Office 365 (Excel/Word/PowerPoint)</span>
+              <span class="badge badge-lg" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.9rem;">RoomDB</span>
+              <span class="badge badge-lg" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.9rem;">MySQL/SQL Server</span>
+            </div>
+          </div>
+          <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="text-3xl">🛠️</div>
+              <h3 class="text-2xl font-semibold">Tools & DevOps</h3>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <span class="badge badge-lg badge-outline" style="border-color: #00d4ff; color: #00d4ff; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Visual Studio</span>
+              <span class="badge badge-lg badge-outline" style="border-color: #00d4ff; color: #00d4ff; padding: 0.75rem 1.25rem; font-size: 0.9rem;">VS Code</span>
+              <span class="badge badge-lg badge-outline" style="border-color: #00d4ff; color: #00d4ff; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Android Studio</span>
+              <span class="badge badge-lg badge-outline" style="border-color: #00d4ff; color: #00d4ff; padding: 0.75rem 1.25rem; font-size: 0.9rem;">GitHub</span>
+              <span class="badge badge-lg badge-outline" style="border-color: #00d4ff; color: #00d4ff; padding: 0.75rem 1.25rem; font-size: 0.9rem;">GitHub Actions</span>
+              <span class="badge badge-lg badge-outline" style="border-color: #00d4ff; color: #00d4ff; padding: 0.75rem 1.25rem; font-size: 0.9rem;">CircleCI</span>
+              <span class="badge badge-lg badge-outline" style="border-color: #00d4ff; color: #00d4ff; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Docker</span>
+              <span class="badge badge-lg badge-outline" style="border-color: #00d4ff; color: #00d4ff; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Postman</span>
+              <span class="badge badge-lg badge-outline" style="border-color: #00d4ff; color: #00d4ff; padding: 0.75rem 1.25rem; font-size: 0.9rem;">SonarCloud</span>
+              <span class="badge badge-lg badge-outline" style="border-color: #00d4ff; color: #00d4ff; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Render</span>
+              <span class="badge badge-lg badge-outline" style="border-color: #00d4ff; color: #00d4ff; padding: 0.75rem 1.25rem; font-size: 0.9rem;">Expo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="py-20 bg-base-200 relative overflow-hidden">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-12">
+          <h2 class="text-5xl font-bold mb-4 gradient-text" data-aos="fade-up">Resume</h2>
+          <p class="text-lg opacity-70" data-aos="fade-up" data-aos-delay="100">
+            Get the full picture of my experience and skills
+          </p>
+        </div>
+        <div
+          class="glass-card rounded-3xl overflow-hidden"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        >
+          <div class="grid md:grid-cols-3 gap-0">
+            <div class="md:col-span-1 bg-gradient-to-br from-purple-600 to-blue-500 p-8 flex flex-col items-center justify-center text-white relative" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+            <img
+              src="ss.jpg?v=2"
+              alt="Resume preview"
+                class="w-32 h-32 object-cover rounded-full border-4 border-white shadow-xl mb-6"
+              />
+              <h3 class="text-2xl font-bold mb-2 resume-name">Shawn du Preez</h3>
+              <p class="text-center opacity-90 text-sm resume-subtitle">Full-Stack & Mobile Developer</p>
+              <div class="mt-6 space-y-2 text-sm">
+                <div class="flex items-center gap-2">
+                  <span>📧</span>
+                  <span>Available via contact</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span>🎓</span>
+                  <span>BSc CS & IT Student</span>
+                </div>
+              </div>
+            </div>
+            <div class="md:col-span-2 p-8">
+              <h3 class="text-2xl font-bold mb-4">Professional Summary</h3>
+              <p class="mb-6 leading-relaxed opacity-80">
+                Passionate developer with expertise in full-stack web development, mobile applications,
+                and cloud integration. Experienced in building secure, scalable solutions using modern
+                technologies and best practices.
+              </p>
+              <div class="space-y-4 mb-6">
+                <div>
+                  <h4 class="font-semibold mb-2 flex items-center gap-2">
+                    <span class="text-purple-500">●</span> Backend Development
+                  </h4>
+                  <p class="text-sm opacity-70 ml-6">ASP.NET Core, Azure services, API design</p>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2 flex items-center gap-2">
+                    <span class="text-blue-500">●</span> Mobile Development
+                  </h4>
+                  <p class="text-sm opacity-70 ml-6">Kotlin, React Native, Jetpack Compose</p>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2 flex items-center gap-2">
+                    <span class="text-cyan-500">●</span> Cloud & DevOps
+                  </h4>
+                  <p class="text-sm opacity-70 ml-6">Azure, Supabase, CI/CD pipelines</p>
+                </div>
+              </div>
+              <p class="text-sm opacity-60 mb-6 italic">
+                💼 Contact me for source code demos and project presentations under NDA.
+              </p>
+              <a
+                href="assets/Resume.pdf"
+                class="btn btn-primary btn-lg w-full"
+                download
+                style="background: linear-gradient(135deg, #6a00ff 0%, #8e2de2 100%); border: none; color: white; font-weight: 600;"
+              >
+                📄 Download Full Resume (PDF)
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-base-100 relative">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="text-center mb-12">
+          <h2 class="text-5xl font-bold mb-4 gradient-text" data-aos="fade-up">Let's Connect</h2>
+          <p class="text-lg opacity-70" data-aos="fade-up" data-aos-delay="100">
+            I'm always open to discussing new projects, creative ideas, or opportunities
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="200">
+          <a
+            href="https://github.com/"
+            class="glass-card p-8 rounded-2xl text-center hover:scale-105 transition-all duration-300 group"
+            target="_blank"
+            style="text-decoration: none;"
+          >
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+                class="w-8 h-8 text-white"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 .5C5.73.5.5 5.73.5 12.02c0 5.13 3.32 9.47 7.93 10.99.58.11.79-.25.79-.55 0-.27-.01-1-.02-1.96-3.22.7-3.9-1.55-3.9-1.55-.53-1.35-1.29-1.71-1.29-1.71-1.05-.72.08-.7.08-.7 1.17.08 1.79 1.2 1.79 1.2 1.03 1.76 2.71 1.25 3.37.95.1-.75.4-1.25.72-1.53-2.57-.29-5.28-1.29-5.28-5.74 0-1.27.46-2.31 1.2-3.13-.12-.3-.52-1.52.11-3.17 0 0 .97-.31 3.18 1.19a11.06 11.06 0 012.9-.39c.99.01 1.99.14 2.9.39 2.2-1.5 3.17-1.19 3.17-1.19.63 1.65.23 2.87.11 3.17.75.82 1.2 1.86 1.2 3.13 0 4.46-2.71 5.45-5.29 5.74.41.36.77 1.07.77 2.17 0 1.56-.02 2.82-.02 3.2 0 .3.21.67.8.55A10.53 10.53 0 0023.5 12c0-6.28-5.23-11.5-11.5-11.5z"
+              />
+            </svg>
+            </div>
+            <h3 class="font-bold text-xl mb-2 group-hover:text-purple-500 transition-colors">GitHub</h3>
+            <p class="text-sm opacity-70">View my code</p>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/shawn-du-preez-6228a9284"
+            class="glass-card p-8 rounded-2xl text-center hover:scale-105 transition-all duration-300 group"
+            target="_blank"
+            style="text-decoration: none;"
+          >
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+                class="w-8 h-8 text-white"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M4.983 3.5C4.983 2.12 6.105.99 7.483.99s2.5 1.13 2.5 2.51c0 1.37-1.11 2.49-2.5 2.49s-2.5-1.12-2.5-2.49zM.5 23.5h7.966V7.5H.5v16zM23.5 23.5h-7.966v-8.5c0-2.02-.04-4.61-2.81-4.61-2.81 0-3.24 2.2-3.24 4.47v8.64H2.49V7.5h7.66v2.18h.11c1.07-2.04 3.69-4.2 7.59-4.2 8.14 0 9.64 5.36 9.64 12.31v8.71z"
+              />
+            </svg>
+            </div>
+            <h3 class="font-bold text-xl mb-2 group-hover:text-cyan-500 transition-colors">LinkedIn</h3>
+            <p class="text-sm opacity-70">Let's connect</p>
+          </a>
+          <button
+            class="glass-card p-8 rounded-2xl text-center hover:scale-105 transition-all duration-300 group"
+            id="copy-email"
+            type="button"
+            style="border: none; cursor: pointer;"
+          >
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+                class="w-8 h-8 text-white"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M2 4h20v16H2V4zm2.4 2v2.72l7.6 5.04 7.6-5.04V6H4.4zm0 10h15.2V9.6l-7.6 5.04L4.4 9.6V16z"
+              />
+            </svg>
+            </div>
+            <h3 class="font-bold text-xl mb-2 group-hover:text-pink-500 transition-colors">Email</h3>
+            <p class="text-sm opacity-70">Click to copy</p>
+          </button>
+        </div>
+        <div class="mt-12 text-center" data-aos="fade-up" data-aos-delay="300">
+          <p class="opacity-60 text-sm">
+            💡 Available for freelance opportunities and collaborations
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-base-200 text-center relative overflow-hidden">
+      <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(106, 0, 255, 0.05) 0%, rgba(0, 212, 255, 0.05) 100%); pointer-events: none;"></div>
+      <div class="relative z-10">
+        <div class="flex justify-center gap-6 mb-4">
+          <a href="#hero" class="opacity-60 hover:opacity-100 transition-opacity">Home</a>
+          <a href="#about" class="opacity-60 hover:opacity-100 transition-opacity">About</a>
+          <a href="#projects" class="opacity-60 hover:opacity-100 transition-opacity">Projects</a>
+          <a href="#contact" class="opacity-60 hover:opacity-100 transition-opacity">Contact</a>
+        </div>
+        <p class="text-sm opacity-70 mb-2">
+          &copy; <span id="year"></span> Shawn du Preez. All rights reserved.
+        </p>
+        <p class="text-xs opacity-50">
+          Built with ❤️ using Tailwind CSS, DaisyUI & AOS
+        </p>
+      </div>
+    </footer>
+
+    <!-- Custom script -->
+    <script src="assets/script.js"></script>
+    
+    <!-- Particle background script -->
+    <script>
+      // Create floating particles in hero section
+      function createParticles() {
+        const hero = document.getElementById('hero');
+        if (!hero) return;
+        
+        const particlesContainer = document.createElement('div');
+        particlesContainer.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;';
+        
+        for (let i = 0; i < 50; i++) {
+          const particle = document.createElement('div');
+          const size = Math.random() * 4 + 2;
+          const left = Math.random() * 100;
+          const delay = Math.random() * 20;
+          const duration = Math.random() * 20 + 15;
+          
+          particle.style.cssText = `
+            position: absolute;
+            width: ${size}px;
+            height: ${size}px;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            left: ${left}%;
+            bottom: -10px;
+            animation: floatUp ${duration}s ease-in-out ${delay}s infinite;
+            opacity: 0;
+          `;
+          
+          particlesContainer.appendChild(particle);
+        }
+        
+        hero.appendChild(particlesContainer);
+        
+        // Add animation keyframes if not already added
+        if (!document.getElementById('particle-animations')) {
+          const style = document.createElement('style');
+          style.id = 'particle-animations';
+          style.textContent = `
+            @keyframes floatUp {
+              0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+              }
+              10% {
+                opacity: 0.5;
+              }
+              90% {
+                opacity: 0.5;
+              }
+              100% {
+                transform: translateY(-100vh) translateX(${Math.random() * 100 - 50}px);
+                opacity: 0;
+              }
+            }
+          `;
+          document.head.appendChild(style);
+        }
+      }
+      
+      // Run after page load
+      window.addEventListener('load', createParticles);
+    </script>
+
+
+  </body>
+</html>
