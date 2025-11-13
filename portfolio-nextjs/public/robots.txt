@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shawndupreez.github.io/sitemap.xml
+
