@@ -1,44 +1,44 @@
 // Projects data
 const projectsData = [
   {
-    title: "Project 1",
-    description: "Full-stack web application with modern UI and cloud integration",
-    tags: ["Web", "DevOps"],
+    title: "EventEase",
+    description: "UI/UX & Full-Stack Academic Project – Responsive booking interface with Razor Pages, Azure SQL & Blob Storage. Implemented form validation, user feedback flows and venue management.",
+    tags: ["Web", "Design"],
     image: "assets/img/project-1.png",
     github: "#",
     demo: "#"
   },
   {
-    title: "Project 2",
-    description: "Mobile application built with React Native and cloud backend",
-    tags: ["Mobile", "Web"],
+    title: "Proofly",
+    description: "OCR Receipt Scanning App – Mobile UI flows for scanning and processing receipts with ML Kit OCR. Supabase authentication, multi-tenant database structure and responsive expense dashboards.",
+    tags: ["Mobile", "Prototypes"],
     image: "assets/img/project-2.png",
     github: "#",
     demo: "#"
   },
   {
-    title: "Project 3",
-    description: "Automation tool for streamlining development workflows",
-    tags: ["Automation", "DevOps"],
+    title: "TrailGuide",
+    description: "Hiking Companion App – Mobile UI with Jetpack Compose. GPS integration, route planning, offline maps and weather data. Accessible design for real-time outdoor usage.",
+    tags: ["Mobile", "Design"],
     image: "assets/img/project-3.png",
     github: "#",
     demo: "#"
   },
   {
-    title: "Project 4",
-    description: "Research project exploring new technologies and methodologies",
-    tags: ["Research", "Prototypes"],
+    title: "RiseCoaching Dashboard",
+    description: "Client Project – User dashboards for personality and career mapping assessments. Clean interface for results, filtering and summaries. Automated data transformation with Google Apps Script & Supabase.",
+    tags: ["Automation", "Web"],
     image: "assets/img/project-4.png",
     github: "#",
     demo: "#"
   },
   {
-    title: "Project 5",
-    description: "Design system and component library for consistent UI",
+    title: "Portfolio Website",
+    description: "UI/UX & Front-End Project – Responsive personal portfolio with component-based layout and modern styling. Converted Figma concepts into functional HTML/CSS/JS with focus on accessibility.",
     tags: ["Design", "Web"],
     image: "assets/img/project-5.png",
-    github: "#",
-    demo: "#"
+    github: "https://github.com/ShawnDuPreez/ShawnDuPreez.github.io",
+    demo: "https://shawndupreez.github.io"
   }
 ];
 
@@ -133,7 +133,7 @@ function initEmailCopy() {
   const copyBtn = document.getElementById('copy-email');
   if (copyBtn) {
     copyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText('shawn@example.com').then(() => {
+      navigator.clipboard.writeText('Shawn345dp@gmail.com').then(() => {
         const originalText = copyBtn.querySelector('p').textContent;
         copyBtn.querySelector('p').textContent = 'Copied!';
         setTimeout(() => {
