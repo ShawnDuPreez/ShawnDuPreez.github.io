@@ -1,5 +1,6 @@
 // Projects data
 const projectsData = [
+  // CV Projects - Real Work
   {
     title: "EventEase",
     description: "UI/UX & Full-Stack Academic Project – Responsive booking interface with Razor Pages, Azure SQL & Blob Storage. Implemented form validation, user feedback flows and venue management.",
@@ -39,6 +40,47 @@ const projectsData = [
     image: "assets/img/project-5.png",
     github: "https://github.com/ShawnDuPreez/ShawnDuPreez.github.io",
     demo: "https://shawndupreez.github.io"
+  },
+  // Additional Projects
+  {
+    title: "Cloud Infrastructure Manager",
+    description: "Full-stack web application with modern UI and cloud integration. Built with ASP.NET Core and Azure services for scalable deployment.",
+    tags: ["Web", "DevOps"],
+    image: "assets/img/project-1.png",
+    github: "#",
+    demo: "#"
+  },
+  {
+    title: "React Native Social App",
+    description: "Mobile application built with React Native and cloud backend. Features real-time messaging, user authentication, and media sharing.",
+    tags: ["Mobile", "Web"],
+    image: "assets/img/project-2.png",
+    github: "#",
+    demo: "#"
+  },
+  {
+    title: "DevOps Automation Suite",
+    description: "Automation tool for streamlining development workflows. Includes CI/CD pipeline configuration and deployment automation.",
+    tags: ["Automation", "DevOps"],
+    image: "assets/img/project-3.png",
+    github: "#",
+    demo: "#"
+  },
+  {
+    title: "ML Research Platform",
+    description: "Research project exploring new technologies and methodologies. Focuses on machine learning applications and data processing.",
+    tags: ["Research", "Prototypes"],
+    image: "assets/img/project-4.png",
+    github: "#",
+    demo: "#"
+  },
+  {
+    title: "Design System Library",
+    description: "Design system and component library for consistent UI. Built with Storybook and includes comprehensive documentation.",
+    tags: ["Design", "Web"],
+    image: "assets/img/project-5.png",
+    github: "#",
+    demo: "#"
   }
 ];
 
